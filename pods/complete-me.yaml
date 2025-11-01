@@ -1,0 +1,14 @@
+# intro to cloud computing in class exercise
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: # TODO: Add your pod name here
+  labels:
+    app: webserver
+spec:
+  containers:
+    - name: apache
+      image: # TODO: Use httpd:latest
+      ports:
+        - containerPort: # TODO: Apache uses port 80
