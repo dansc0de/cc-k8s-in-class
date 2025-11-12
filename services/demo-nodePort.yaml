@@ -1,0 +1,20 @@
+# use-case: external cluster access
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-app-service
+spec:
+  type: NodePort
+  selector:
+    app: demo-app              # Matches the deployment labels
+  ports:
+    - port: 5678                 # Service port
+      targetPort: 5678           # http-echo default port
+      nodePort: 30100            # External access port (30000-32767)
+
+####
+# kubectl apply -f demo-nodePort.yaml
+# kubectl get services
+# kubectl get endpoints demo-app-service
+####

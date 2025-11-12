@@ -94,3 +94,29 @@ This repository contains example pod configurations in the `pods/` directory. Ap
 ```bash
 kubectl apply -f pods/<pod-file>.yaml
 ```
+
+## In-Class Deployment Demo
+
+demo walkthrough covering configmaps, deployments, and services:
+
+```bash
+# apply the configmap
+kubectl apply -f configmaps/demo-configmap.yaml
+
+# apply the deployment
+kubectl apply -f deployments/demo-deployment.yaml
+
+# apply the service
+kubectl apply -f services/demo-nodePort.yaml
+
+# get the service url and access the app
+minikube service demo-app-service --url
+```
+
+verify everything is running:
+```bash
+kubectl get configmaps
+kubectl get deployments
+kubectl get pods
+kubectl get services
+```

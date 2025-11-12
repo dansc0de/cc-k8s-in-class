@@ -1,0 +1,19 @@
+# use-case: internal cluster access
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+spec:
+  type: ClusterIP              # default, internal only
+  selector:
+    app: demo-app                 # matches deployment labels!
+  ports:
+    - port: 80                   # service port
+      targetPort: 80             # container port
+
+###
+# kubectl apply -f service.yaml
+# kubectl get services
+# kubectl get endpoints nginx-service
+####
