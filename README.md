@@ -120,3 +120,8 @@ kubectl get deployments
 kubectl get pods
 kubectl get services
 ```
+
+## debug container
+```shell
+kubectl run test -it --rm -n production --image=busybox -- sh
+```
